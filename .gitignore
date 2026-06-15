@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[oc]
+*.pyd
+*.pyo
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Linting
+.ruff_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/
+
+# ML artifacts
+data/
+artifacts/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.h5
+runs/
+outputs/
+logs/
+wandb/
+mlruns/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Documents
+docs/
