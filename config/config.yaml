@@ -1,0 +1,62 @@
+seed: 42
+
+paths:
+  raw_images:
+    train: data/train_images
+    val: data/val_images
+    test: data/test_images
+  labels:
+    train: data/train_1.csv
+    val: data/valid.csv
+    test: data/test.csv
+  preprocessed_dir: data/preprocessed
+  embeddings_dir: articfacts/embeddings
+  artifacts_dir: articfacts
+
+dataset:
+  # 2 with merge_to_binary replicates the notebook's referable-DR setup;
+  # set num_classes: 5 and merge_to_binary: false for full grading.
+  num_classes: 2
+  merge_to_binary: true
+
+preprocessing:
+  image_size: 224
+  sigma_x: 30
+  crop_tolerance: 7
+  workers: 8
+
+features:
+  batch_size: 64
+  # Extra augmented passes over the train split cached alongside the
+  # deterministic embeddings (0 = deterministic only).
+  augment_passes: 0
+
+training:
+  batch_size: 64
+  head_lr: 8.0e-4
+  base_lr: 3.0e-5
+  weight_decay: 1.0e-4
+  label_smoothing: 0.0
+  early_stopping_patience: 5
+  num_workers: 0
+
+ga:
+  population_size: 20
+  generations: 10
+  cxpb: 0.7
+  mupb: 0.3
+  tournsize: 5
+  elite_frac: 0.1
+  control_ranges:
+    conv_layers: [3, 6]
+    fc_layers: [1, 2]
+    epochs: [10, 100, 10]
+  conv_ranges:
+    conv_type: [1, 3]
+    filter_size: [3, 5]
+    num_neurons: [[16, 32], [16, 32], [64, 128], [64, 128], [256, 512], [256, 512]]
+    dropout: [10, 50, 10]
+  fc_ranges:
+    layer_type: [1, 2]
+    num_neurons: [[16, 32], [16, 32], [64, 128], [64, 128], [256, 512], [256, 512]]
+    dropout: [10, 50, 10]
