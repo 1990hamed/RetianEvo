@@ -31,10 +31,8 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
-notebooks/
 
 # ML artifacts
-data/
 artifacts/
 *.pt
 *.pth
@@ -61,3 +59,19 @@ CLAUDE.md
 
 # Documents
 docs/
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.webp
+*.svg
+*.ico
+
+# Text files
+*.txt
+*.csv

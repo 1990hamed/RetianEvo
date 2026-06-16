@@ -5,7 +5,7 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "albumentationsx>=2.3.1",
+    "albumentations>=2.0.8",
     "deap>=1.4.4",
     "lightning>=2.6.5",
     "matplotlib>=3.10.9",

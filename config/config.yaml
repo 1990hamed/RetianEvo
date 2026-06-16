@@ -10,7 +10,6 @@ paths:
     val: data/valid.csv
     test: data/test.csv
   preprocessed_dir: data/preprocessed
-  embeddings_dir: articfacts/embeddings
   artifacts_dir: articfacts
 
 dataset:
@@ -25,16 +24,9 @@ preprocessing:
   crop_tolerance: 7
   workers: 8
 
-features:
-  batch_size: 64
-  # Extra augmented passes over the train split cached alongside the
-  # deterministic embeddings (0 = deterministic only).
-  augment_passes: 0
-
 training:
   batch_size: 64
-  head_lr: 8.0e-4
-  base_lr: 3.0e-5
+  lr: 8.0e-4
   weight_decay: 1.0e-4
   label_smoothing: 0.0
   early_stopping_patience: 5
